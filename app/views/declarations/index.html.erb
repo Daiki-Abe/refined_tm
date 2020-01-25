@@ -30,6 +30,8 @@
         <td><%= declaration.what %></td>
         <td><%= declaration.why %></td>
         <td><%= declaration.time %></td>
+        <td><%= declaration.score %></td>
+        
         <td><%= link_to 'Show', declaration %></td>
         <td><%= link_to 'Edit', edit_declaration_path(declaration) %></td>
         <td><%= link_to 'Destroy', declaration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -40,4 +42,6 @@
 
 <br>
 
-<%= link_to "Let's Go!!!", new_declaration_path %>
+<%= link_to "Good Morning!!", new_declaration_path %>
+
+<%= link_to "明日へ!!", "/declarations/#{@declarations.ids}", method: :delete %>

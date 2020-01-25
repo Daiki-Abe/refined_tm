@@ -15,5 +15,10 @@
   <%= @declaration.time %>
 </p>
 
-<%= link_to 'Edit', edit_declaration_path(@declaration) %> |
-<%= link_to 'Back', declarations_path %>
+<p>
+  <strong>Score:</strong>
+  <%= @declaration.score %>
+</p>
+
+<%= link_to '次のアクション', new_declaration_path(@declaration) %> |
+<%= link_to 'Good Night!!', declarations_path %>

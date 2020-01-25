@@ -11,22 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :what %>
-    <%= form.text_field :what %>
-  </div>
+  <%= form_for declaration do |f| %>
+    <%= f.label :what, "今から何をしますか？" %>
+    <%= f.text_field :what, placeholder: '自由に入力しましょう' %>
 
-  <div class="field">
-    <%= form.label :why %>
-    <%= form.text_field :why %>
-  </div>
+    <%= f.label :why, "何のためにするのですか？" %>
+    <%= f.text_field :why, placeholder: '本当にやりたいことことをやりましょう' %>
 
-  <div class="field">
-    <%= form.label :time %>
-    <%= form.text_field :time %>
-  </div>
+    <%= f.label :time, "目標の時間を入力してください" %>
+    <%= f.text_field :time, placeholder: '時間に入力しましょう' %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <%= f.label :score, "アクション結果" %>
+    <%= f.text_field :score, id: "score" %>
+
+
+    <div id="timer">00:00:00:000</div>
+    <button id="start">start</button> 
+    <button id="stop" disabled>stop</button>
+    <button id="reset">reset</button>
+
+    <%= f.submit "開始する" %>
+  <% end %>
 <% end %>

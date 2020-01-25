@@ -1,5 +1,5 @@
 class DeclarationsController < ApplicationController
-  before_action :set_declaration, only: [:show, :edit, :update, :destroy]
+  before_action :set_declaration, only: [:show, :edit, :update]
 
   # GET /declarations
   # GET /declarations.json
@@ -54,7 +54,8 @@ class DeclarationsController < ApplicationController
   # DELETE /declarations/1
   # DELETE /declarations/1.json
   def destroy
-    @declaration.destroy
+    @declaration = Declaration.all
+    @declaration.destroy_all
     respond_to do |format|
       format.html { redirect_to declarations_url, notice: 'Declaration was successfully destroyed.' }
       format.json { head :no_content }
@@ -69,6 +70,6 @@ class DeclarationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def declaration_params
-      params.require(:declaration).permit(:what, :why, :time)
+      params.require(:declaration).permit(:what, :why, :time, :score)
     end
 end

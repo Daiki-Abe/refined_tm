@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_19_042734) do
+ActiveRecord::Schema.define(version: 2020_01_25_093203) do
 
   create_table "declarations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "what", null: false
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_01_19_042734) do
     t.string "time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "score", null: false
   end
 
 end
