@@ -1,3 +1,3 @@
 class Declaration < ApplicationRecord
-  validates :what, :why, :time, presence: true
+  validates :what, :why, :time, :score, presence: true
 end
