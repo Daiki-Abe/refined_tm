@@ -12,6 +12,10 @@ class DeclarationsController < ApplicationController
   def show
   end
 
+  def score
+    @declarations = Declaration.all
+  end
+
   # GET /declarations/new
   def new
     @declaration = Declaration.new
@@ -28,7 +32,7 @@ class DeclarationsController < ApplicationController
 
     respond_to do |format|
       if @declaration.save
-        format.html { redirect_to @declaration, notice: 'Declaration was successfully created.' }
+        format.html { redirect_to new_declaration_path, notice: 'Declaration was successfully created.' }
         format.json { render :show, status: :created, location: @declaration }
       else
         format.html { render :new }

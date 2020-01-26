@@ -25,11 +25,13 @@
     <%= f.text_field :score, id: "score" %>
 
 
-    <div id="timer">00:00:00:000</div>
+    <div id="timer">00時間00分00秒</div>
     <button id="start">start</button> 
     <button id="stop" disabled>stop</button>
     <button id="reset">reset</button>
 
-    <%= f.submit "開始する" %>
+    <%= f.submit "記録する" %>
+
+    <%= link_to 'Good Night!!', score_declarations_path %>
   <% end %>
 <% end %>

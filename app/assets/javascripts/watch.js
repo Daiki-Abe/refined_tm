@@ -29,7 +29,7 @@ const updateTimeText = () => {
   s = `0${s}`.slice(-2);
   ms = `00${ms}`.slice(-3);
 
-  timer.textContent = `${h}:${m}:${s}:${ms}`;
+  timer.textContent = `${h}時間${m}分${s}秒`;
 };
 
 // 経過時間の管理と計算を行う関数
