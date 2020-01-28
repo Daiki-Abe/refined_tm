@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= render 'shared/header' %>
+
 <h1>あなたの時間をマネジメントしよう！</h1>
 
 <h2>このアプリはあなたの人生（＝時間）を有意義なものに導きます</h2>
@@ -14,32 +16,7 @@
   <br>自分の時間を使うということは、自分の人生を使うということをよく考えて行動しよう！
 </h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>何を</th>
-      <th>何のための</th>
-      <th>目標時間</th>
-      <th>アクション時間</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @declarations.each do |declaration| %>
-      <tr>
-        <td><%= declaration.what %></td>
-        <td><%= declaration.why %></td>
-        <td><%= declaration.time %></td>
-        <td><%= declaration.score %></td>
-        
-        <td><%= link_to 'Show', declaration %></td>
-        <td><%= link_to 'Edit', edit_declaration_path(declaration) %></td>
-        <td><%= link_to 'Destroy', declaration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
