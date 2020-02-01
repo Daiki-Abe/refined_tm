@@ -2,25 +2,34 @@
 
 <%= render 'shared/header' %>
 
-<h1>あなたの時間をマネジメントしよう！</h1>
+<div class = "title">
+  <h1 class = "title__main-title">Time Management</h1>
+  <h2 class = "title__sub-title">〜 効率と生産性を向上させよう！ 〜</h2>
+</div>
 
-<h2>このアプリはあなたの人生（＝時間）を有意義なものに導きます</h2>
-<h3>＜使い方＞
+<div id = "sentence">
+  <div id = "sentence1" class = "sentence">明日死ぬかのように生きよ。<br>永遠に生きるかのように学べ。<br>- マハトマ・ガンジー -<a href = ""><img src = ""></a></div>
+  <div id = "sentence2" class = "sentence">人生とは今日一日のことである。<br>- デール・カーネギー -<a href = ""><img src = ""></a></div>
+  <div id = "sentence3" class = "sentence">時間の浪費をなんとも思わない人は、人生の価値をまだ発見してはいない。<br>- ダーウィン -<a href = ""><img src = ""></a></div>
+  <div id = "sentence4" class = "sentence">睡眠は三日間で三時間。こんなつらい仕事を四十年続けるなんて、馬鹿じゃないとできないですよ。<br>- 手塚治虫 -<a href = ""><img src = ""></a></div>
+  <div id = "sentence5" class = "sentence">人は、生まれ、ほんの一瞬生き、そして死ぬんだ。ずっとそうだ。<br>- スティーブ・ジョブズ -<a href = ""><img src = ""></a></div>
+  <div id = "sentence6" class = "sentence">時というものは、それぞれの人間によって、それぞれの速さで走るものなのだよ。<br>- シェイクスピア -<a href = ""><img src = ""></a></div>
+</div>
+
+<h3 class = "how-to-use">＜このアプリの使い方＞
+  <br>自分の時間を有意義に使うということを意識して行動しよう！
+  <ul>
   <li>①何のための時間にするのか</li>
   <li>②なぜそのアクションをするのか</li>
   <li>③どれだけの時間を使うか</li>
-  <br>以上の３点を考え、入力してください！
-</h3>
-
-<h3>＜ポイント＞
-  <br>自分の時間を使うということは、自分の人生を使うということをよく考えて行動しよう！
+  </ul>
+  以上の３点を考え、入力してください！あとはストップウォッチで時間を計るだけ！
 </h3>
 
 
 
-<br>
-
-<%= link_to "Good Morning!!", new_declaration_path %>
-
+<div class = "start__botton">
+  <%= link_to "Start!!", new_declaration_path, class: "start" %>
+</div>
 
 

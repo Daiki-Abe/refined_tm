@@ -1,0 +1,27 @@
+.header {
+  background-color: #271802;
+  display: flex;
+  height: 60px;
+
+  &__botton-home {
+    margin: 15px;
+  }
+
+  &__botton-score {
+    margin: 15px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+
+a:hover {
+  color: #1eaaeb;
+}
+
+a:active {
+  color:#a72121;
+}
