@@ -16,20 +16,24 @@
   <div id = "sentence6" class = "sentence">時というものは、それぞれの人間によって、それぞれの速さで走るものなのだよ。<br>- シェイクスピア -<a href = ""><img src = ""></a></div>
 </div>
 
-<h3 class = "how-to-use">＜このアプリの使い方＞
-  <br>自分の時間を有意義に使うということを意識して行動しよう！
-  <ul>
-  <li>①何のための時間にするのか</li>
-  <li>②なぜそのアクションをするのか</li>
-  <li>③どれだけの時間を使うか</li>
-  </ul>
-  以上の３点を考え、入力してください！あとはストップウォッチで時間を計るだけ！
+<h3 class = "howToUse">
+  <div class = "howToUse__title">＜このアプリの使用方法＞</div>
+  <div class = "howToUse__sentence">
+  <br>①何のための時間にするのか  ②なぜそのアクションをするのか  ③どれだけの時間を使うか
+  <br>以上の３点を考え、宣言しよう！あとはストップウォッチで時間を計測するだけ！<br>
+  <br>計測が終わったら、どんどん次のアクションへ進もう！休憩時間や食事の時間もストイックに計ろう！
+  <br>次のアクションに進む場合 ⇨<span>『記録する』</span>ボタンを押下してください。
+  <br>その日の記録を終了する場合 ⇨<span>『終了する』</span>ボタンを押下してください。<br>
+  <br><span>『記録一覧』</span>で、１日の行動を振り返ろう！<span>『明日へ』</span>ボタンを押下すると、記録は全て消去されます。<br>
+  <br><div class = "linear">ポイント：偉人たちの言葉を参考に「自分の時間（＝人生）を使う」ことを意識して行動しよう！</div>
+  <br>注意事項：記録をすることができるのは一日だけです。
+  </div>
 </h3>
 
 
 
-<div class = "start__botton">
-  <%= link_to "Start!!", new_declaration_path, class: "start" %>
+<div class = "start__button">
+  <%= link_to "Start!!", new_declaration_path, class: "start__button-btn" %>
 </div>
 
 
