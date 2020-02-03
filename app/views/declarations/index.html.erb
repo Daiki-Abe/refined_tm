@@ -1,31 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Declarations</h1>
+<%= render 'shared/header' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>What</th>
-      <th>Why</th>
-      <th>Time</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class = "title">
+  <h1 class = "title__main-title">Time Management</h1>
+  <h2 class = "title__sub-title">〜 効率と生産性を向上させよう！ 〜</h2>
+</div>
 
-  <tbody>
-    <% @declarations.each do |declaration| %>
-      <tr>
-        <td><%= declaration.what %></td>
-        <td><%= declaration.why %></td>
-        <td><%= declaration.time %></td>
-        <td><%= link_to 'Show', declaration %></td>
-        <td><%= link_to 'Edit', edit_declaration_path(declaration) %></td>
-        <td><%= link_to 'Destroy', declaration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id = "sentence">
+  <div id = "sentence1" class = "sentence">明日死ぬかのように生きよ。<br>永遠に生きるかのように学べ。<br>- マハトマ・ガンジー -<a href = ""><img src = ""></a></div>
+  <div id = "sentence2" class = "sentence">人生とは今日一日のことである。<br>- デール・カーネギー -<a href = ""><img src = ""></a></div>
+  <div id = "sentence3" class = "sentence">時間の浪費をなんとも思わない人は、人生の価値をまだ発見してはいない。<br>- ダーウィン -<a href = ""><img src = ""></a></div>
+  <div id = "sentence4" class = "sentence">睡眠は三日間で三時間。こんなつらい仕事を四十年続けるなんて、馬鹿じゃないとできないですよ。<br>- 手塚治虫 -<a href = ""><img src = ""></a></div>
+  <div id = "sentence5" class = "sentence">人は、生まれ、ほんの一瞬生き、そして死ぬんだ。ずっとそうだ。<br>- スティーブ・ジョブズ -<a href = ""><img src = ""></a></div>
+  <div id = "sentence6" class = "sentence">時というものは、それぞれの人間によって、それぞれの速さで走るものなのだよ。<br>- シェイクスピア -<a href = ""><img src = ""></a></div>
+</div>
 
-<br>
+<h3 class = "howToUse">
+  <div class = "howToUse__title">＜このアプリの使用方法＞</div>
+  <div class = "howToUse__sentence">
+  <br>①何のための時間にするのか  ②なぜそのアクションをするのか  ③どれだけの時間を使うか
+  <br>以上の３点を考え、宣言しよう！あとはストップウォッチで時間を計測するだけ！<br>
+  <br>計測が終わったら、どんどん次のアクションへ進もう！休憩時間や食事の時間もストイックに計ろう！
+  <br>次のアクションに進む場合 ⇨<span>『記録する』</span>ボタンを押下してください。
+  <br>その日の記録を終了する場合 ⇨<span>『終了する』</span>ボタンを押下してください。<br>
+  <br><span>『記録一覧』</span>で、１日の行動を振り返ろう！<span>『明日へ』</span>ボタンを押下すると、記録は全て消去されます。<br>
+  <br><div class = "linear">ポイント：偉人たちの言葉を参考に「自分の時間（＝人生）を使う」ことを意識して行動しよう！</div>
+  <br>注意事項：記録をすることができるのは一日だけです。
+  </div>
+</h3>
 
-<%= link_to 'New Declaration', new_declaration_path %>
+
+
+<div class = "start__button">
+  <%= link_to "Start!!", new_declaration_path, class: "start__button-btn" %>
+</div>
+
+

@@ -10,23 +10,42 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :what %>
-    <%= form.text_field :what %>
-  </div>
-
-  <div class="field">
-    <%= form.label :why %>
-    <%= form.text_field :why %>
-  </div>
-
-  <div class="field">
-    <%= form.label :time %>
-    <%= form.text_field :time %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
+
+  <%= form_for declaration do |f| %>
+    <div class = "form">
+
+      <div class = "what">
+        <%= f.label :what, "今から何をしますか？" %>
+        <%= f.text_field :what, placeholder: '本当にやりたいことをやりましょう', class: "what__field" %>
+      </div>
+
+      <div class = "why">
+        <%= f.label :why, "何のためにするのですか？" %>
+        <%= f.text_field :why, placeholder: '何故やるのかよく考えましょう', class: "why__field" %>
+      </div>
+
+      <div class = "time">
+        <%= f.label :time, "目標の時間を入力してください" %>
+        <%= f.text_field :time, placeholder: '目標時間を入力しましょう', class: "time__field" %>
+      </div>
+
+      
+      <%= f.hidden_field :score, id: "score" %>
+
+
+      <div id="timer">00時間00分00秒</div>
+      <div class = "stopwatch__button">
+        <button id="start">start</button> 
+        <button id="stop" disabled>stop</button>
+        <button id="reset">reset</button>
+      </div>
+
+      <div class = "end__field">
+        <%= f.submit "記録する", class: "link__record" %>
+        <%= link_to '終了する', score_declarations_path, class: "end__button" %>
+      </div>
+
+    </div>
+  <% end %>
+

@@ -1,5 +1,5 @@
 class DeclarationsController < ApplicationController
-  before_action :set_declaration, only: [:show, :edit, :update, :destroy]
+  before_action :set_declaration, only: [:show, :edit, :update]
 
   # GET /declarations
   # GET /declarations.json
@@ -10,6 +10,10 @@ class DeclarationsController < ApplicationController
   # GET /declarations/1
   # GET /declarations/1.json
   def show
+  end
+
+  def score
+    @declarations = Declaration.all
   end
 
   # GET /declarations/new
@@ -28,7 +32,7 @@ class DeclarationsController < ApplicationController
 
     respond_to do |format|
       if @declaration.save
-        format.html { redirect_to @declaration, notice: 'Declaration was successfully created.' }
+        format.html { redirect_to new_declaration_path, notice: 'Declaration was successfully created.' }
         format.json { render :show, status: :created, location: @declaration }
       else
         format.html { render :new }
@@ -54,7 +58,8 @@ class DeclarationsController < ApplicationController
   # DELETE /declarations/1
   # DELETE /declarations/1.json
   def destroy
-    @declaration.destroy
+    @declaration = Declaration.all
+    @declaration.destroy_all
     respond_to do |format|
       format.html { redirect_to declarations_url, notice: 'Declaration was successfully destroyed.' }
       format.json { head :no_content }
@@ -69,6 +74,6 @@ class DeclarationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def declaration_params
-      params.require(:declaration).permit(:what, :why, :time)
+      params.require(:declaration).permit(:what, :why, :time, :score)
     end
 end

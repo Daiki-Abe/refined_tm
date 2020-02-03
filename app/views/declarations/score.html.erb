@@ -1,0 +1,37 @@
+<%= render 'shared/header' %>
+
+<h1 class = "score__title">Today's Activity Record</h1>
+
+<h2 class = "score__subtitle">〜 一日を振り返り、明日からの時間の使い方に生かそう！ 〜</h2>
+
+<table align = "center" >
+  <thead>
+    <tr>
+      <th>What</th>
+      <th>Why</th>
+      <th>Time</th>
+      <th>Result</th>
+      <th colspan="3">Show</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @declarations.each do |declaration| %>
+      <tr>
+        <td><%= declaration.what %></td>
+        <td><%= declaration.why %></td>
+        <td><%= declaration.time %></td>
+        <td><%= declaration.score %></td>
+        
+        <td><%= link_to '詳細', declaration %></td>
+        <td><%= link_to '編集', edit_declaration_path(declaration) %></td>
+        <td><%= link_to '削除', declaration, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class = "record__field">
+  <%= link_to "Start!!", new_declaration_path, class: "link__start" %>
+  <%= link_to "明日の記録へ!!", "/declarations/#{@declarations.ids}", method: :delete, class: "link__delete" %>
+</div>
