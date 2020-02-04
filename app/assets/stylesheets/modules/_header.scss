@@ -1,13 +1,23 @@
 .header {
   background-color: #271802;
-  display: flex;
   height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
 
-  &__botton-home {
+.header__left {
+  display: flex;
+
+  &__btn {
     margin: 15px;
   }
+}
 
-  &__botton-score {
+.header__right {
+  display: flex;
+  justify-content: right;
+
+  &__btn {
     margin: 15px;
   }
 }

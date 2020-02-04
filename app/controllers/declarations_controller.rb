@@ -1,14 +1,11 @@
 class DeclarationsController < ApplicationController
   before_action :set_declaration, only: [:show, :edit, :update]
+  before_action :move_to_index, except: [:index, :show]
 
-  # GET /declarations
-  # GET /declarations.json
   def index
     @declarations = Declaration.all
   end
 
-  # GET /declarations/1
-  # GET /declarations/1.json
   def show
   end
 
@@ -16,17 +13,13 @@ class DeclarationsController < ApplicationController
     @declarations = Declaration.all
   end
 
-  # GET /declarations/new
   def new
     @declaration = Declaration.new
   end
 
-  # GET /declarations/1/edit
   def edit
   end
 
-  # POST /declarations
-  # POST /declarations.json
   def create
     @declaration = Declaration.new(declaration_params)
 
@@ -41,8 +34,6 @@ class DeclarationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /declarations/1
-  # PATCH/PUT /declarations/1.json
   def update
     respond_to do |format|
       if @declaration.update(declaration_params)
@@ -55,8 +46,6 @@ class DeclarationsController < ApplicationController
     end
   end
 
-  # DELETE /declarations/1
-  # DELETE /declarations/1.json
   def destroy
     @declaration = Declaration.all
     @declaration.destroy_all
@@ -67,13 +56,15 @@ class DeclarationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_declaration
       @declaration = Declaration.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def declaration_params
       params.require(:declaration).permit(:what, :why, :time, :score)
     end
-end
+
+    def move_to_index
+      redirect_to action: :index unless user_signed_in?
+    end
+  end
