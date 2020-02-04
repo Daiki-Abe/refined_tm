@@ -10,7 +10,7 @@ class DeclarationsController < ApplicationController
   end
 
   def score
-    @declarations = Declaration.all
+    @declarations = Declaration.includes(:user)
   end
 
   def new
@@ -61,7 +61,7 @@ class DeclarationsController < ApplicationController
     end
 
     def declaration_params
-      params.require(:declaration).permit(:what, :why, :time, :score)
+      params.require(:declaration).permit(:what, :why, :time, :score).merge(user_id: current_user.id)
     end
 
     def move_to_index
