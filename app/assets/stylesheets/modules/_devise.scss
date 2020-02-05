@@ -1,0 +1,32 @@
+.devise__title {
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  background-color: black;
+} 
+
+.field {
+  height: 70px;
+  margin: 30px 20px;
+  font-size: 25px;
+
+  &__area {
+    width: 400px;
+    height: 30px;
+  }
+}
+
+.actions {
+  margin: 40px 20px;
+
+  &__btn {
+    border: solid 1px black;
+    font-size: 25px;
+    background-color: black;
+    color: white;
+  }
+
+  &__btn:hover {
+    color: #1eaaeb;
+  }
+}
