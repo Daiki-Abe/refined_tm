@@ -40,16 +40,9 @@
 
       <div id="timer">00時間00分00秒</div>
       <div class = "stopwatch__button">
-        <button id="start">start</button> 
-        <button id="stop" disabled>stop</button>
-        <button id="reset">reset</button>
-      </div>
-
-      <div class = "end__field">
+        <button id="start">開始する</button> 
         <%= f.submit "記録する", class: "link__record" %>
-        <%= link_to '終了する', score_declarations_path, class: "end__button" %>
       </div>
-
     </div>
   <% end %>
 

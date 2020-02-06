@@ -1,7 +1,5 @@
 const timer = document.getElementById("timer");
 const start = document.getElementById("start");
-const stop = document.getElementById("stop");
-const reset = document.getElementById("reset");
 
 // 経過時間を保存する変数（単位:ミリ秒）
 let elapsedTime;
@@ -47,8 +45,6 @@ start.addEventListener("click", () => {
   countUp();
   // スタートボタンを無効化
   start.disabled = true;
-  // ストップボタンを有効化
-  stop.disabled = false;
 
   // スタートした時間を取得
   let whenTime = new Date()
@@ -57,20 +53,12 @@ start.addEventListener("click", () => {
   $('#start__time').val(hour + ":" + minute);
 });
 
-stop.addEventListener("click", () => {
+$('form').submit(function() {
   clearTimeout(timerId);
   timeToAdd += Date.now() - startTime;
   // スタートボタンを有効化
   start.disabled = false;
-  // ストップボタンを無効化
-  stop.disabled = true;
   const score = timer.textContent
   $('#score').val(score);
 });
 
-reset.addEventListener("click", () => {
-  elapsedTime = 0;
-  timeToAdd = 0;
-  // 00:00:000 を表示
-  updateTimeText();
-});
