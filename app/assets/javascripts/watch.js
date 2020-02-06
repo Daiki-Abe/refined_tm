@@ -49,6 +49,12 @@ start.addEventListener("click", () => {
   start.disabled = true;
   // ストップボタンを有効化
   stop.disabled = false;
+
+  // スタートした時間を取得
+  let whenTime = new Date()
+  let hour = whenTime.getHours();
+  let minute = whenTime.getMinutes();
+  $('#start__time').val(hour + ":" + minute);
 });
 
 stop.addEventListener("click", () => {
