@@ -20,7 +20,7 @@ html,body {
 
 .howToUse {
   text-align: center;
-  height: 500px;
+  height: 700px;
   margin: 30px 50px;
   border: solid 2px black;
   background-image: url("timephoto5.jpeg");
@@ -39,8 +39,9 @@ html,body {
     background-color: black;
   }
 
-  &__sentence .linear{
-    background: linear-gradient(transparent 80%, #1eaaeb 50%);
+  &__sentence .point{
+    font-size: 40px;
+    font-weight: bold;
   }
 }
 

@@ -27,7 +27,7 @@ const updateTimeText = () => {
   s = `0${s}`.slice(-2);
   ms = `00${ms}`.slice(-3);
 
-  timer.textContent = `${h}時間${m}分${s}秒`;
+  timer.textContent = `${h}：${m}：${s}`;
 };
 
 // 経過時間の管理と計算を行う関数
@@ -35,21 +35,28 @@ const countUp = () => {
   timerId = setTimeout(() => {
     elapsedTime = Date.now() - startTime + timeToAdd;
     updateTimeText();
-//countUp関数自身を呼ぶことで10ミリ秒毎に計算を始める
+    //countUp関数自身を呼ぶことで10ミリ秒毎に計算を始める
     countUp();
   }, 10);
 };
+
+// 時間表記（開始時間と終了時間）を２桁にする関数
+function set2fig(num){
+  let ret;
+  if(num < 10) {ret = "0" + num;}
+  else {ret = num;}
+  return ret;
+}
 
 start.addEventListener("click", () => {
   startTime = Date.now();
   countUp();
   // スタートボタンを無効化
   start.disabled = true;
-
   // スタートした時間を取得
   let whenTime = new Date()
-  let hour = whenTime.getHours();
-  let minute = whenTime.getMinutes();
+  let hour = set2fig(whenTime.getHours());
+  let minute = set2fig(whenTime.getMinutes());
   $('#start__time').val(hour + ":" + minute);
 });
 
@@ -60,5 +67,10 @@ $('form').submit(function() {
   start.disabled = false;
   const score = timer.textContent
   $('#score').val(score);
+  // 終了した時間を取得
+  let whenTime = new Date()
+  let hour = set2fig(whenTime.getHours());
+  let minute = set2fig(whenTime.getMinutes());
+  $('#end__time').val(hour + ":" + minute);
 });
 
