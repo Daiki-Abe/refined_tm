@@ -1,6 +1,11 @@
 ---
 ja:
   activerecord:
+    attributes:
+      declaration:
+        what: 【今から何をするか】
+        why: 【何のためにするか】
+        time: 【目標の時間】
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
