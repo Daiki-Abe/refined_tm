@@ -1,38 +1,31 @@
 class DeclarationsController < ApplicationController
   before_action :set_declaration, only: [:show, :edit, :update]
+  before_action :move_to_index, except: [:index, :show]
 
-  # GET /declarations
-  # GET /declarations.json
   def index
     @declarations = Declaration.all
   end
 
-  # GET /declarations/1
-  # GET /declarations/1.json
   def show
   end
 
   def score
-    @declarations = Declaration.all
+    @declarations = Declaration.includes(:user)
   end
 
-  # GET /declarations/new
   def new
     @declaration = Declaration.new
   end
 
-  # GET /declarations/1/edit
   def edit
   end
 
-  # POST /declarations
-  # POST /declarations.json
   def create
     @declaration = Declaration.new(declaration_params)
 
     respond_to do |format|
       if @declaration.save
-        format.html { redirect_to new_declaration_path, notice: 'Declaration was successfully created.' }
+        format.html { redirect_to new_declaration_path, notice: '記録しました。次のアクションを入力してください。' }
         format.json { render :show, status: :created, location: @declaration }
       else
         format.html { render :new }
@@ -41,12 +34,10 @@ class DeclarationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /declarations/1
-  # PATCH/PUT /declarations/1.json
   def update
     respond_to do |format|
       if @declaration.update(declaration_params)
-        format.html { redirect_to @declaration, notice: 'Declaration was successfully updated.' }
+        format.html { redirect_to @declaration, notice: '' }
         format.json { render :show, status: :ok, location: @declaration }
       else
         format.html { render :edit }
@@ -55,25 +46,25 @@ class DeclarationsController < ApplicationController
     end
   end
 
-  # DELETE /declarations/1
-  # DELETE /declarations/1.json
   def destroy
     @declaration = Declaration.all
     @declaration.destroy_all
     respond_to do |format|
-      format.html { redirect_to declarations_url, notice: 'Declaration was successfully destroyed.' }
+      format.html { redirect_to declarations_url, notice: 'お疲れ様でした。全ての記録を消去しました。' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_declaration
       @declaration = Declaration.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def declaration_params
-      params.require(:declaration).permit(:what, :why, :time, :score)
+      params.require(:declaration).permit(:what, :why, :time, :score, :start, :end).merge(user_id: current_user.id)
     end
-end
+
+    def move_to_index
+      redirect_to action: :index unless user_signed_in?
+    end
+  end

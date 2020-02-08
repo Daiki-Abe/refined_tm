@@ -1,7 +1,5 @@
 const timer = document.getElementById("timer");
 const start = document.getElementById("start");
-const stop = document.getElementById("stop");
-const reset = document.getElementById("reset");
 
 // 経過時間を保存する変数（単位:ミリ秒）
 let elapsedTime;
@@ -29,7 +27,7 @@ const updateTimeText = () => {
   s = `0${s}`.slice(-2);
   ms = `00${ms}`.slice(-3);
 
-  timer.textContent = `${h}時間${m}分${s}秒`;
+  timer.textContent = `${h}：${m}：${s}`;
 };
 
 // 経過時間の管理と計算を行う関数
@@ -37,34 +35,42 @@ const countUp = () => {
   timerId = setTimeout(() => {
     elapsedTime = Date.now() - startTime + timeToAdd;
     updateTimeText();
-//countUp関数自身を呼ぶことで10ミリ秒毎に計算を始める
+    //countUp関数自身を呼ぶことで10ミリ秒毎に計算を始める
     countUp();
   }, 10);
 };
+
+// 時間表記（開始時間と終了時間）を２桁にする関数
+function set2fig(num){
+  let ret;
+  if(num < 10) {ret = "0" + num;}
+  else {ret = num;}
+  return ret;
+}
 
 start.addEventListener("click", () => {
   startTime = Date.now();
   countUp();
   // スタートボタンを無効化
   start.disabled = true;
-  // ストップボタンを有効化
-  stop.disabled = false;
+  // スタートした時間を取得
+  let whenTime = new Date()
+  let hour = set2fig(whenTime.getHours());
+  let minute = set2fig(whenTime.getMinutes());
+  $('#start__time').val(hour + ":" + minute);
 });
 
-stop.addEventListener("click", () => {
+$('form').submit(function() {
   clearTimeout(timerId);
   timeToAdd += Date.now() - startTime;
   // スタートボタンを有効化
   start.disabled = false;
-  // ストップボタンを無効化
-  stop.disabled = true;
   const score = timer.textContent
   $('#score').val(score);
+  // 終了した時間を取得
+  let whenTime = new Date()
+  let hour = set2fig(whenTime.getHours());
+  let minute = set2fig(whenTime.getMinutes());
+  $('#end__time').val(hour + ":" + minute);
 });
 
-reset.addEventListener("click", () => {
-  elapsedTime = 0;
-  timeToAdd = 0;
-  // 00:00:000 を表示
-  updateTimeText();
-});

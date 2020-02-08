@@ -20,7 +20,7 @@ html,body {
 
 .howToUse {
   text-align: center;
-  height: 500px;
+  height: 700px;
   margin: 30px 50px;
   border: solid 2px black;
   background-image: url("timephoto5.jpeg");
@@ -34,13 +34,14 @@ html,body {
   }
 
   &__sentence span {
-    color: #1eaaeb;
+    color: $main-blue;
     font-weight: bold;
     background-color: black;
   }
 
-  &__sentence .linear{
-    background: linear-gradient(transparent 80%, #1eaaeb 50%);
+  &__sentence .point{
+    font-size: 40px;
+    font-weight: bold;
   }
 }
 
@@ -57,4 +58,11 @@ html,body {
     text-align: center;
     background-color: black;
   }
+}
+
+#notice {
+  font-size: 20px;
+  color: red;
+  background-color: black;
+  text-align: center;
 }

@@ -1,11 +1,11 @@
 <%= form_with(model: declaration, local: true) do |form| %>
   <% if declaration.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(declaration.errors.count, "error") %> prohibited this declaration from being saved:</h2>
+      <h2 class = "error__messages"><%= pluralize(declaration.errors.count, "error") %> が発生しました</h2>
 
       <ul>
       <% declaration.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li class = "error__messages"><%= message %></li>
       <% end %>
       </ul>
     </div>
@@ -33,19 +33,15 @@
       
       <%= f.hidden_field :score, id: "score" %>
 
+      <%= f.hidden_field :start, id: "start__time" %>
 
-      <div id="timer">00時間00分00秒</div>
+      <%= f.hidden_field :end, id: "end__time" %>
+
+      <div id="timer">00：00：00</div>
       <div class = "stopwatch__button">
-        <button id="start">start</button> 
-        <button id="stop" disabled>stop</button>
-        <button id="reset">reset</button>
-      </div>
-
-      <div class = "end__field">
+        <button id="start">開始する</button> 
         <%= f.submit "記録する", class: "link__record" %>
-        <%= link_to '終了する', score_declarations_path, class: "end__button" %>
       </div>
-
     </div>
   <% end %>
 
