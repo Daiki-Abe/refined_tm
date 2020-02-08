@@ -34,7 +34,7 @@ html,body {
   }
 
   &__sentence span {
-    color: #1eaaeb;
+    color: $main-blue;
     font-weight: bold;
     background-color: black;
   }
@@ -58,4 +58,11 @@ html,body {
     text-align: center;
     background-color: black;
   }
+}
+
+#notice {
+  font-size: 20px;
+  color: red;
+  background-color: black;
+  text-align: center;
 }

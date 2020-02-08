@@ -1,21 +1,30 @@
-.what {
+.error__messages {
+  font-size: 20px;
+  color: red;
+  background-color: black;
+}
+
+.form {
   font-size: 30px;
+}
+
+label {
+  background-color: black;
+  color: $main-blue;
+}
+
+.what, .why, .time {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
 }
 
 .what__field {
   width: 600px;
 }
 
-.why {
-  font-size: 30px;
-}
-
 .why__field {
   width: 600px;
-}
-
-.time {
-  font-size: 30px;
 }
 
 .time__field {
@@ -23,11 +32,11 @@
 }
 
 #timer {
-  margin-top: 50px;
-  font-size: 150px;
+  margin-top: 30px;
+  font-size: 200px;
   text-align: center;
   background-color: black;
-  color: #1eaaeb;
+  color: $main-blue;
 }
 
 .stopwatch__button {
@@ -36,8 +45,8 @@
 }
 
 #start {
-  font-size: 80px;
-  background-color: #1eaaeb;
+  font-size: 50px;
+  background-color: $main-blue;
   border: solid 1px black;
   margin-right: 30px;
   font-family: sans-serif;
@@ -46,7 +55,7 @@
 .link__record {
   border: solid 1px black;
   display: inline-block;
-  font-size: 80px;
-  background-color: #1eaaeb;
+  font-size: 50px;
+  background-color: $main-blue;
   color: black;
 }

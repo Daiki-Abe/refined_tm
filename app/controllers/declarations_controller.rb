@@ -25,7 +25,7 @@ class DeclarationsController < ApplicationController
 
     respond_to do |format|
       if @declaration.save
-        format.html { redirect_to new_declaration_path, notice: 'Declaration was successfully created.' }
+        format.html { redirect_to new_declaration_path, notice: '記録しました。次のアクションを入力してください。' }
         format.json { render :show, status: :created, location: @declaration }
       else
         format.html { render :new }
@@ -37,7 +37,7 @@ class DeclarationsController < ApplicationController
   def update
     respond_to do |format|
       if @declaration.update(declaration_params)
-        format.html { redirect_to @declaration, notice: 'Declaration was successfully updated.' }
+        format.html { redirect_to @declaration, notice: '' }
         format.json { render :show, status: :ok, location: @declaration }
       else
         format.html { render :edit }
@@ -50,7 +50,7 @@ class DeclarationsController < ApplicationController
     @declaration = Declaration.all
     @declaration.destroy_all
     respond_to do |format|
-      format.html { redirect_to declarations_url, notice: 'Declaration was successfully destroyed.' }
+      format.html { redirect_to declarations_url, notice: 'お疲れ様でした。全ての記録を消去しました。' }
       format.json { head :no_content }
     end
   end

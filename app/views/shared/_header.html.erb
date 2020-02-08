@@ -11,7 +11,6 @@
 
   <div class = "header__right">
     <% if user_signed_in? %>
-      <%= link_to "始める", new_declaration_path, class: "header__right__btn start" %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right__btn logout" %>
     <% else %>
       <%= link_to "ログイン", new_user_session_path, class: "header__right__btn login" %>
