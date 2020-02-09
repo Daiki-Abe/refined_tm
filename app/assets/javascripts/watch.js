@@ -21,7 +21,6 @@ const updateTimeText = () => {
   // 1秒になれなかったもの
   let ms = elapsedTime % 1000;
 
-  // ゼロパディング
   h = `0${h}`.slice(-2);
   m = `0${m}`.slice(-2);
   s = `0${s}`.slice(-2);

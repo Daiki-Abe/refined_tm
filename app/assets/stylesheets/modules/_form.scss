@@ -9,7 +9,7 @@
 }
 
 label {
-  background-color: black;
+  background-color: $main-black;
   color: $main-blue;
 }
 
@@ -19,15 +19,7 @@ label {
   margin-top: 10px;
 }
 
-.what__field {
-  width: 600px;
-}
-
-.why__field {
-  width: 600px;
-}
-
-.time__field {
+.what__field, .why__field, .time__field {
   width: 600px;
 }
 
@@ -35,7 +27,7 @@ label {
   margin-top: 30px;
   font-size: 200px;
   text-align: center;
-  background-color: black;
+  background-color: $main-black;
   color: $main-blue;
 }
 
@@ -47,15 +39,15 @@ label {
 #start {
   font-size: 50px;
   background-color: $main-blue;
-  border: solid 1px black;
+  border: solid 1px $main-black;
   margin-right: 30px;
   font-family: sans-serif;
 }
 
 .link__record {
-  border: solid 1px black;
+  border: solid 1px $main-black;
   display: inline-block;
   font-size: 50px;
   background-color: $main-blue;
-  color: black;
+  color: $main-black;
 }

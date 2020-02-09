@@ -22,7 +22,7 @@ html,body {
   text-align: center;
   height: 700px;
   margin: 30px 50px;
-  border: solid 2px black;
+  border: solid 2px $main-black;
   background-image: url("timephoto5.jpeg");
   background-size: cover;
   color: white;
@@ -36,7 +36,7 @@ html,body {
   &__sentence span {
     color: $main-blue;
     font-weight: bold;
-    background-color: black;
+    background-color: $main-black;
   }
 
   &__sentence .point{
@@ -56,13 +56,13 @@ html,body {
     padding: 20px 40px;
     margin: auto;
     text-align: center;
-    background-color: black;
+    background-color: $main-black;
   }
 }
 
 #notice {
   font-size: 20px;
   color: red;
-  background-color: black;
+  background-color: $main-black;
   text-align: center;
 }

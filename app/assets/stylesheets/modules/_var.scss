@@ -1,0 +1,10 @@
+$main-blue: #1eaaeb;
+
+$main-black: black;
+
+@mixin slide($start,$image) {
+  animation: fadeinout 18s ease-in-out $start infinite;
+  -webkit-animation: fadeinout 18s ease-in-out $start infinite;
+  background-image: url($image);
+  background-size: cover;
+}

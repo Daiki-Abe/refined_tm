@@ -26,12 +26,12 @@ a {
   text-decoration: none;
   color: white;
   font-size: 25px;
-}
 
-a:hover {
-  color: $main-blue;
-}
+  &:hover {
+    color: $main-blue;
+  }
 
-a:active {
-  color:#a72121;
+  &:active {
+    color:#a72121;
+  }
 }
