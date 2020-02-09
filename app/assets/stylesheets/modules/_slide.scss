@@ -16,45 +16,27 @@
 }
 
 #sentence1 {
-  animation: fadeinout 18s ease-in-out 0s infinite;
-  -webkit-animation: fadeinout 18s ease-in-out 0s infinite;
-  background-image: url("ganzi.jpeg");
-  background-size: cover;
+  @include slide(0s,"ganzi.jpeg");
 }
 
 #sentence2 {
-  animation: fadeinout 18s ease-in-out 3s infinite;
-  -webkit-animation: fadeinout 18s ease-in-out 3s infinite;
-  background-image: url("dale.jpeg");
-  background-size: cover;
+  @include slide(3s,"dale.jpeg");
 }
 
 #sentence3 {
-  animation: fadeinout 18s ease-in-out 6s infinite;
-  -webkit-animation: fadeinout 18s ease-in-out 6s infinite;
-  background-image: url("dawin.jpeg");
-  background-size: cover;
+  @include slide(6s,"dawin.jpeg");
 }
 
 #sentence4 {
-  animation: fadeinout 18s ease-in-out 9s infinite;
-  -webkit-animation: fadeinout 18s ease-in-out 9s infinite;
-  background-image: url("teduka.jpeg");
-  background-size: cover;
+  @include slide(9s,"teduka.jpeg");
 }
 
 #sentence5 {
-  animation: fadeinout 18s ease-in-out 12s infinite;
-  -webkit-animation: fadeinout 18s ease-in-out 12s infinite;
-  background-image: url("jobs.jpeg");
-  background-size: cover;
+  @include slide(12s,"jobs.jpeg");
 }
 
 #sentence6 {
-  animation: fadeinout 18s ease-in-out 15s infinite;
-  -webkit-animation: fadeinout 18s ease-in-out 15s infinite;
-  background-image: url("shake.jpeg");
-  background-size: cover;
+  @include slide(15s,"shake.jpeg");
 }
 
 @keyframes fadeinout {
