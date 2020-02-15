@@ -1,8 +1,12 @@
 <%= render 'shared/header' %>
 
-<h1 class = "score__title">Today's Activity Record</h1>
+<h1 class = "score__title">
+  <% if user_signed_in? %>
+    <div><%= "#{current_user.name}さんの活動記録" %></div>
+  <% end %>
+</h1>
 
-<h2 class = "score__subtitle">〜 一日を振り返り、明日からの時間の使い方に生かそう！ 〜</h2>
+<h2 class = "score__subtitle">〜 今日を振り返り、明日からの時間の使い方に生かそう！ 〜</h2>
 
 <table align = "center" >
   <thead>
