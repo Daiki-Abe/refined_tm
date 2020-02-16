@@ -20,7 +20,8 @@
   </thead>
 
   <tbody>
-    <% @declarations.each do |declaration| %>
+  <% @declarations.each do |declaration| %>
+    <% if declaration.user_id == current_user.id %>
       <tr>
         <td><%= declaration.start %> - <%= declaration.end %></td>
         <td><%= declaration.what %></td>
@@ -29,6 +30,7 @@
         <td><%= declaration.score %></td>
       </tr>
     <% end %>
+  <% end %>
   </tbody>
 </table>
 
