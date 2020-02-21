@@ -1,24 +1,19 @@
-# README
+# Refined_TM
+１日の時間の使い方を意識させてくれるアプリです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリ概要
+①何のための時間にするのか ②なぜそのアクションをするのか ③目標の時間
+を宣言した上で、ストップウォッチで時間を計ることができます。
+宣言したアクションが終了したらストップウォッチを止めて、宣言した内容を全て記録することができます。
 
-Things you may want to cover:
+全てのアクションに対して、何故するのかという宣言をすることや時間計測をすることで、
+１日における時間の使い方を意識して、生産性や効率を向上させることができます。
 
-* Ruby version
+「時間の使い方は命の使い方」といった時間に対する考え方を偉人たちの名言から吸収することができます。
 
-* System dependencies
+## 機能
+- Ruby on Railsで製作したアプリです。
+- 
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 技術的ポイント
+- 
