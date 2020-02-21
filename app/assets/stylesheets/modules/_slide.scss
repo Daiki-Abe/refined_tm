@@ -16,27 +16,27 @@
 }
 
 #sentence1 {
-  @include slide(0s,"ganzi.jpeg");
+  @include slide(0s,"/images/ganzi.jpeg");
 }
 
 #sentence2 {
-  @include slide(3s,"dale.jpeg");
+  @include slide(3s,"/images/dale.jpeg");
 }
 
 #sentence3 {
-  @include slide(6s,"dawin.jpeg");
+  @include slide(6s,"/images/dawin.jpeg");
 }
 
 #sentence4 {
-  @include slide(9s,"teduka.jpeg");
+  @include slide(9s,"/images/teduka.jpeg");
 }
 
 #sentence5 {
-  @include slide(12s,"jobs.jpeg");
+  @include slide(12s,"/images/jobs.jpeg");
 }
 
 #sentence6 {
-  @include slide(15s,"shake.jpeg");
+  @include slide(15s,"/images/shake.jpeg");
 }
 
 @keyframes fadeinout {
