@@ -41,7 +41,7 @@ class DeclarationsController < ApplicationController
     redirect_to declarations_url, notice: 'お疲れ様でした。全ての記録を消去しました。'
   end
 
-    private
+  private
 
   def set_declaration
     @declaration = Declaration.find(params[:id])
@@ -54,4 +54,4 @@ class DeclarationsController < ApplicationController
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
-  end
+end
