@@ -53,7 +53,7 @@ end
 
 feature 'ログイン後', type: :feature do
   background do
-    user = create(:user)
+    create(:user)
   end
 
   scenario 'ログインできるか' do
