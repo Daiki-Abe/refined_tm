@@ -43,6 +43,8 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'rubocop', require: false
+  gem 'rubocop-rails'
 end
 
 group :development do
