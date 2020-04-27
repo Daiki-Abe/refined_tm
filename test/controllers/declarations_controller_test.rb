@@ -5,17 +5,17 @@ class DeclarationsControllerTest < ActionDispatch::IntegrationTest
     @declaration = declarations(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get declarations_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_declaration_url
     assert_response :success
   end
 
-  test "should create declaration" do
+  test 'should create declaration' do
     assert_difference('Declaration.count') do
       post declarations_url, params: { declaration: { time: @declaration.time, what: @declaration.what, why: @declaration.why } }
     end
@@ -23,22 +23,22 @@ class DeclarationsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to declaration_url(Declaration.last)
   end
 
-  test "should show declaration" do
+  test 'should show declaration' do
     get declaration_url(@declaration)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_declaration_url(@declaration)
     assert_response :success
   end
 
-  test "should update declaration" do
+  test 'should update declaration' do
     patch declaration_url(@declaration), params: { declaration: { time: @declaration.time, what: @declaration.what, why: @declaration.why } }
     assert_redirected_to declaration_url(@declaration)
   end
 
-  test "should destroy declaration" do
+  test 'should destroy declaration' do
     assert_difference('Declaration.count', -1) do
       delete declaration_url(@declaration)
     end

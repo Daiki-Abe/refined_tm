@@ -6,8 +6,7 @@ class DeclarationsController < ApplicationController
     @declarations = Declaration.all
   end
 
-  def show
-  end
+  def show; end
 
   def score
     @declarations = Declaration.includes(:user)
@@ -17,8 +16,7 @@ class DeclarationsController < ApplicationController
     @declaration = Declaration.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @declaration = Declaration.new(declaration_params)
@@ -40,19 +38,20 @@ class DeclarationsController < ApplicationController
   def destroy
     @declaration = Declaration.all
     @declaration.where(user_id: current_user.id).destroy_all
-      redirect_to declarations_url, notice: 'お疲れ様でした。全ての記録を消去しました。'
+    redirect_to declarations_url, notice: 'お疲れ様でした。全ての記録を消去しました。'
   end
 
-  private
-    def set_declaration
-      @declaration = Declaration.find(params[:id])
-    end
+    private
 
-    def declaration_params
-      params.require(:declaration).permit(:what, :why, :time, :score, :start, :end).merge(user_id: current_user.id)
-    end
+  def set_declaration
+    @declaration = Declaration.find(params[:id])
+  end
 
-    def move_to_index
-      redirect_to action: :index unless user_signed_in?
-    end
+  def declaration_params
+    params.require(:declaration).permit(:what, :why, :time, :score, :start, :end).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
   end
