@@ -1,27 +1,26 @@
 <%= render "shared/header" %>
 
-<h2 class = "devise__title">アカウントでログインする</h2>
+<h2 class = "devise__title">ログインページ</h2>
 <div class = "alert">
   <%= alert %>
 </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email, "メールアドレス" %><br />
+    <%= f.label :email, "メールアドレス" %>
+    <br>
+    <em>必須</em>
+    <br>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field__area" %>
   </div>
 
   <div class="field">
-    <%= f.label :password, "パスワード" %><br />
+    <%= f.label :password, "パスワード" %>
+    <br>
+    <em>必須</em>
+    <br>
     <%= f.password_field :password, autocomplete: "current-password", class: "field__area" %>
   </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, "ログイン状態を維持する", class: "field__area" %>
-    </div>
-  <% end %>
 
   <div class="actions">
     <%= f.submit "ログインする", class: "actions__btn" %>
