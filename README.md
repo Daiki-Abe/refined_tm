@@ -2,16 +2,16 @@
 「Refind_TM」
 
 ## :globe_with_meridians: URL
-http://18.176.91.246/
+http://18.176.91.246:3000
 
 ## :key: 採用ご担当者様のアカウント
 メールアドレス：「saiyou4444@gmail.com」<br>
 パスワード：「saiyou4444」
 
 ## :scroll: アプリ概要
-ストップウォッチで時間を管理することができます。<br>
+ストップウォッチで活動時間を管理することができます。<br>
 ①何のための時間にするのか ②なぜそのアクションをするのか ③目標の時間<br>
-を宣言した上で、ストップウォッチで時間を計ることができます。<br>
+を宣言した上で、ストップウォッチで活動時間を計ることができます。<br>
 宣言したアクションが終了したらストップウォッチを止めて、宣言した内容と時間を全て記録することができます。<br>
 <br>
 全てのアクションに対して、何故するのかという宣言をすることや時間計測をすることで、<br>
@@ -36,11 +36,34 @@ http://18.176.91.246/
 - 「AWS（EC2）」でデプロイ
 
 ## :memo: 課題と今後実装したい機能
-- 偉人たちとスライドショーのレパートリーを増やしたい。
+- スライドショーのレパートリーを増やしたい。
 - twitterのAPIを活用してログインできるようにしたい。
 - EC2 → ECSを使用したい。
 
 ## :triangular_ruler: DB設計
+### users(devise)テーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false|
+|encrypted_password|string|null: false|
+
+### Association
+- has_many :declarations, dependent: :destroy
+
+### declarationsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|what|string|null: false|
+|why|string|null: false|
+|time|string|null: false|
+|score|string|null: false|
+|start|string|null: false|
+|end|string|null: false|
+|user_id|integer|null: false|
+
+### Association
+- belongs_to :user
 
 ## :octocat: 製作者
 - [GitHub](https://github.com/Daiki-Abe)
