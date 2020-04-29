@@ -1,32 +1,55 @@
 
 <%= render "shared/header" %>
 
-<h2 class = "devise__title">新規登録</h2>
+<h2 class = "devise__title">アカウント新規登録</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
   <div class="field">
-    <%= f.label :name, "お名前" %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "field__area" %>
+    <%= f.label :name, "お名前" %>
+    <br>
+    <em>必須</em>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "field__area", placeholder: "例）タイム小僧" %>
+    <% if resource.errors.any?%>
+      <div class = "error__messages-user">
+        <%= resource.errors.full_messages_for(:name).first%>
+      </div>
+    <% end %>
   </div>
 
   <div class="field">
-    <%= f.label :email, "メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field__area" %>
+    <%= f.label :email, "メールアドレス" %>
+    <br>
+    <em>必須</em>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field__area", placeholder: "携帯・パソコンどちらでも可" %>
+    <% if resource.errors.any?%>
+      <div class = "error__messages-user">
+        <%= resource.errors.full_messages_for(:email).first%>
+      </div>
+    <% end %>
   </div>
 
   <div class="field">
     <%= f.label :password, "パスワード" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "field__area" %>
+    <br>
+    <em>必須</em>
+    <%= f.password_field :password, autocomplete: "new-password", class: "field__area", placeholder: "半角英数字６文字以上" %>
+    <% if resource.errors.any?%>
+      <div class = "error__messages-user">
+        <%= resource.errors.full_messages_for(:password).first%>
+      </div>
+    <% end %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, "パスワード再入力" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "field__area" %>
+    <%= f.label :password_confirmation, "パスワード再入力" %>
+    <br>
+    <em>必須</em>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "field__area", placeholder: "半角英数字６文字以上" %>
+    <% if resource.errors.any?%>
+      <div class = "error__messages-user">
+        <%= resource.errors.full_messages_for(:password_confirmation).first%>
+      </div>
+    <% end %>
   </div>
 
   <div class="actions">

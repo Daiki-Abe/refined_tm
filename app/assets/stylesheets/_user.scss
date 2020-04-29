@@ -56,3 +56,19 @@ em {
   color: red;
   background-color: $main-black;
 }
+
+.error__messages-user {
+  color: red;
+}
+
+.field_with_errors {
+  display: contents;
+
+  input {
+    border-color: red;
+  }
+
+  textarea {
+    border-color: red;
+  }
+}
