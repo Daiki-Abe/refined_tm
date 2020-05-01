@@ -3,14 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .howToUse {
-  text-align: center;
-  height: 700px;
   margin: 30px 50px;
-  border: solid 2px $main-black;
+  height: 700px;
   background-image: url("/images/timephoto5.jpeg");
   background-size: cover;
   color: white;
+  text-align: center;
   font-size: 25px;
+  border: solid 2px $main-black;
+  border-radius: 10px;
 
   &__title {
     font-size: 30px;
@@ -35,12 +36,13 @@
 
   &-btn {
     display: block;
-    font-size: 50px;
-    width: 300px;
     padding: 20px 40px;
+    width: 300px;
     margin: auto;
+    font-size: 50px;
     text-align: center;
     background-color: $main-black;
+    border-radius: 10px;
   }
 }
 
