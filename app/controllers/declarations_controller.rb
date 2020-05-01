@@ -38,7 +38,7 @@ class DeclarationsController < ApplicationController
   def destroy
     @declaration = Declaration.all
     @declaration.where(user_id: current_user.id).destroy_all
-    redirect_to declarations_url, notice: 'お疲れ様でした。全ての記録を消去しました。'
+    redirect_to declarations_url, notice: 'お疲れ様でした。本日の記録を消去しました。'
   end
 
   private
