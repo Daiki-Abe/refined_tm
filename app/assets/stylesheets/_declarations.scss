@@ -69,3 +69,61 @@ html,body {
   background-color: $main-black;
   text-align: center;
 }
+
+.form {
+  font-size: 30px;
+}
+
+label {
+  background-color: $main-black;
+  color: $main-blue;
+}
+
+.form__item {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.declaration__field {
+  width: 600px;
+  height: 40px;
+  margin-top: 5px;
+  padding: 10px 16px 8px;
+  border-radius: 5px;
+}
+
+#timer {
+  margin-top: 30px;
+  font-size: 200px;
+  text-align: center;
+  background-color: $main-black;
+  color: $main-blue;
+}
+
+.stopwatch__button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#start {
+  font-size: 50px;
+  background-color: $main-blue;
+  border: solid 1px $main-black;
+  margin-right: 30px;
+  margin-bottom: 50px;
+  font-family: sans-serif;
+  border-radius: 10px;
+}
+
+.link__record {
+  border: solid 1px $main-black;
+  display: inline-block;
+  font-size: 50px;
+  margin-bottom: 50px;
+  background-color: $main-blue;
+  color: $main-black;
+  border-radius: 10px;
+  padding: 2px;
+}

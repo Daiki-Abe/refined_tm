@@ -1,47 +1,41 @@
-<%= form_with(model: declaration, local: true) do |form| %>
-  <% if declaration.errors.any? %>
-    <div id="error_explanation">
-      <h2 class = "error__messages"><%= pluralize(declaration.errors.count, "error") %> が発生しました</h2>
-
-      <ul>
-      <% declaration.errors.full_messages.each do |message| %>
-        <li class = "error__messages"><%= message %></li>
+<%= form_for declaration do |f| %>
+  <div class = "form">
+    <div class = "form__item">
+      <%= f.label :what, "今から何をしますか？" %>
+      <%= f.text_field :what, placeholder: '本当にやりたいことをやりましょう！', class: "declaration__field" %>
+      <% if declaration.errors.any?%>
+        <div class = "error__messages-user">
+          <%= declaration.errors.full_messages_for(:what).first%>
+        </div>
       <% end %>
-      </ul>
     </div>
-  <% end %>
+
+    <div class = "form__item">
+      <%= f.label :why, "何のためにしますか？" %>
+      <%= f.text_field :why, placeholder: '理由をよく考えましょう！', class: "declaration__field" %>
+    </div>
+
+    <div class = "form__item">
+      <%= f.label :time, "時間をどれだけ使いますか？" %>
+      <%= f.text_field :time, placeholder: '1日の時間を意識しましょう！', class: "declaration__field" %>
+    </div>
+
+    <div class = "form__item">
+      ＊上記３点を入力したら、「開始する」ボタンでストップウォッチをスタートさせましょう！「記録する」ボタンで次のアクションに進みましょう！
+    </div>
+
+    
+    <%= f.hidden_field :score, id: "score" %>
+
+    <%= f.hidden_field :start, id: "start__time" %>
+
+    <%= f.hidden_field :end, id: "end__time" %>
+
+    <div id="timer">00：00：00</div>
+    <div class = "stopwatch__button">
+      <button id="start">開始する</button> 
+      <%= f.submit "記録する", class: "link__record" %>
+    </div>
+  </div>
 <% end %>
-
-  <%= form_for declaration do |f| %>
-    <div class = "form">
-
-      <div class = "what">
-        <%= f.label :what, "今から何をしますか？" %>
-        <%= f.text_field :what, placeholder: '本当にやりたいことをやりましょう', class: "what__field" %>
-      </div>
-
-      <div class = "why">
-        <%= f.label :why, "何のためにするのですか？" %>
-        <%= f.text_field :why, placeholder: '何故やるのかよく考えましょう', class: "why__field" %>
-      </div>
-
-      <div class = "time">
-        <%= f.label :time, "目標の時間を入力してください" %>
-        <%= f.text_field :time, placeholder: '目標時間を入力しましょう', class: "time__field" %>
-      </div>
-
-      
-      <%= f.hidden_field :score, id: "score" %>
-
-      <%= f.hidden_field :start, id: "start__time" %>
-
-      <%= f.hidden_field :end, id: "end__time" %>
-
-      <div id="timer">00：00：00</div>
-      <div class = "stopwatch__button">
-        <button id="start">開始する</button> 
-        <%= f.submit "記録する", class: "link__record" %>
-      </div>
-    </div>
-  <% end %>
 
