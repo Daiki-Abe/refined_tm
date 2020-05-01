@@ -25,3 +25,17 @@ html,body {
     font-size: 30px;
   }
 }
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+
+  &:hover {
+    color: $main-blue;
+  }
+
+  &:active {
+    color:#a72121;
+  }
+}
