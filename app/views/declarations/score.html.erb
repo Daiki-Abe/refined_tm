@@ -32,6 +32,6 @@
 </table>
 
 <div class = "record__field">
-  <%= link_to "Start!!", new_declaration_path, class: "link__start" %>
-  <%= link_to "今日を終了", "/declarations/#{@declarations.ids}", method: :delete, class: "link__delete" %>
+  <%= link_to "フォームに戻る", new_declaration_path, class: "record__field-item" %>
+  <%= link_to "今日を終了", "/declarations/#{@declarations.ids}", method: :delete, class: "record__field-item" %>
 </div>
