@@ -40,6 +40,30 @@
   @include slide(15s,"/images/shake.jpeg");
 }
 
+#sentence7 {
+  @include slide(0s,"/images/naporeonn.jpg");
+}
+
+#sentence8 {
+  @include slide(3s,"/images/durucker.jpg");
+}
+
+#sentence9 {
+  @include slide(6s,"/images/henryford.jpg");
+}
+
+#sentence10 {
+  @include slide(9s,"/images/furankurin.jpg");
+}
+
+#sentence11 {
+  @include slide(12s,"/images/lee.jpg");
+}
+
+#sentence12 {
+  @include slide(15s,"/images/jonrenon.jpg");
+}
+
 @keyframes fadeinout {
   0% {opacity: 0;}
   5% {opacity: 1;}
