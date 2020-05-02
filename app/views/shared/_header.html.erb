@@ -13,6 +13,7 @@
     <% if user_signed_in? %>
       <%= link_to "アカウント編集", edit_user_registration_path, class: "header__right__btn edit" %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right__btn logout" %>
+      <%= link_to "退会する", user_registration_path, method: :delete, class: "header__right__btn leave", data: { confirm: "本当に退会しますか?　退会をすると、全てのデータが失われます。" } %>
     <% else %>
       <%= link_to "ログイン", new_user_session_path, class: "header__right__btn login" %>
       <%= link_to "新規登録", new_user_registration_path, class: "header__right__btn signup" %>

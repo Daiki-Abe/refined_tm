@@ -1,33 +1,38 @@
-.devise__title {
-  text-align: center;
-  font-size: 50px;
-  color: white;
-  background-color: black;
-} 
-
 .field {
-  height: 70px;
-  margin: 30px 20px;
-  font-size: 25px;
+  max-width: 436px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 20px;
 
   &__area {
     width: 400px;
-    height: 30px;
+    height: 40px;
+    margin-top: 5px;
+    padding: 10px 16px 8px;
+    border-radius: 5px;
   }
 }
 
+em {
+  background-color: red;
+  border-radius: 2px;
+  padding: 3px;
+}
+
 .actions {
-  margin: 40px 20px;
+  max-width: 436px;
+  margin: 0 auto;
 
   &__btn {
-    border: solid 1px $main-black;
-    font-size: 25px;
-    background-color: $main-black;
-    color: white;
-    padding: 10px;
+    width: 436px;
+    height: 62px;
+    margin: 30px 0px;
+    border-radius: 5px;
+    font-size: 20px;
 
     &:hover {
-      color: $main-blue;
+      background-color: $main-blue;
     }
   }
 }
@@ -36,4 +41,27 @@
   font-size: 20px;
   color: red;
   background-color: $main-black;
+}
+
+.alert {
+  font-size: 20px;
+  text-align: center;
+  color: red;
+  background-color: $main-black;
+}
+
+.error__messages-user {
+  color: red;
+}
+
+.field_with_errors {
+  display: contents;
+
+  input {
+    border-color: red;
+  }
+
+  textarea {
+    border-color: red;
+  }
 }

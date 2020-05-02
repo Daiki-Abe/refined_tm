@@ -1,12 +1,9 @@
 <%= render 'shared/header' %>
 
-<h1 class = "score__title">
-  <% if user_signed_in? %>
-    <div><%= "#{current_user.name}さんの活動記録" %></div>
-  <% end %>
-</h1>
-
-<h2 class = "score__subtitle">〜 今日を振り返り、明日からの時間の使い方に生かそう！ 〜</h2>
+<div class = "title">
+  <h1 class = "title__main-title">Today's Action Record</h1>
+  <h2 class = "title__sub-title">〜 今日を振り返り、明日からの時間の使い方に生かそう！ 〜</h2>
+</div>
 
 <table align = "center" >
   <thead>
@@ -35,6 +32,6 @@
 </table>
 
 <div class = "record__field">
-  <%= link_to "Start!!", new_declaration_path, class: "link__start" %>
-  <%= link_to "今日を終了", "/declarations/#{@declarations.ids}", method: :delete, class: "link__delete" %>
+  <%= link_to "フォームに戻る", new_declaration_path, class: "record__field-item" %>
+  <%= link_to "今日を終了", "/declarations/#{@declarations.ids}", method: :delete, class: "record__field-item" %>
 </div>

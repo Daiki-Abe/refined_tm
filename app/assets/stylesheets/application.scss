@@ -1,9 +1,41 @@
 @import "./reset";
 @import "modules/var";
-
 @import "modules/header";
 @import "modules/slide";
-@import "modules/form";
 @import "modules/score";
 @import "declarations";
 @import "user";
+
+html,body {
+  background-color: #d48e3d;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  text-align: center;
+  height: 140px;
+
+  &__main-title {
+    font-size: 70px;
+  }
+
+  &__sub-title {
+    font-size: 30px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+
+  &:hover {
+    color: $main-blue;
+  }
+
+  &:active {
+    color:#a72121;
+  }
+}

@@ -1,35 +1,17 @@
 // Place all the styles related to the declarations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-html,body {
-  background-color: #d48e3d;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.title {
-  text-align: center;
-  height: 140px;
-
-  &__main-title {
-    font-size: 70px;
-  }
-
-  &__sub-title {
-    font-size: 30px;
-  }
-}
 
 .howToUse {
-  text-align: center;
-  height: 700px;
   margin: 30px 50px;
-  border: solid 2px $main-black;
+  height: 700px;
   background-image: url("/images/timephoto5.jpeg");
   background-size: cover;
   color: white;
+  text-align: center;
   font-size: 25px;
+  border: solid 2px $main-black;
+  border-radius: 10px;
 
   &__title {
     font-size: 30px;
@@ -54,12 +36,13 @@ html,body {
 
   &-btn {
     display: block;
-    font-size: 50px;
-    width: 300px;
     padding: 20px 40px;
+    width: 300px;
     margin: auto;
+    font-size: 50px;
     text-align: center;
     background-color: $main-black;
+    border-radius: 10px;
   }
 }
 
@@ -68,4 +51,62 @@ html,body {
   color: red;
   background-color: $main-black;
   text-align: center;
+}
+
+.form {
+  font-size: 30px;
+}
+
+label {
+  background-color: $main-black;
+  color: $main-blue;
+}
+
+.form__item {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.declaration__field {
+  width: 600px;
+  height: 40px;
+  margin-top: 5px;
+  padding: 10px 16px 8px;
+  border-radius: 5px;
+}
+
+#timer {
+  margin-top: 30px;
+  font-size: 200px;
+  text-align: center;
+  background-color: $main-black;
+  color: $main-blue;
+}
+
+.stopwatch__button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#start {
+  font-size: 50px;
+  background-color: $main-blue;
+  border: solid 1px $main-black;
+  margin-right: 30px;
+  margin-bottom: 50px;
+  font-family: sans-serif;
+  border-radius: 10px;
+}
+
+.link__record {
+  border: solid 1px $main-black;
+  display: inline-block;
+  font-size: 50px;
+  margin-bottom: 50px;
+  background-color: $main-blue;
+  color: $main-black;
+  border-radius: 10px;
+  padding: 2px;
 }
