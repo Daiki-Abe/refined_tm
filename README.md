@@ -66,5 +66,4 @@ http://18.176.91.246:3000
 
 ## :octocat: 製作者
 - [GitHub](https://github.com/Daiki-Abe)
-- [Twitter](https://twitter.com/abeeeee_d)
 - [Qiita](https://qiita.com/Daiki-Abe)
