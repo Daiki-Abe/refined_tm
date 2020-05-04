@@ -26,6 +26,7 @@ http://18.176.91.246:3000
 そこで、1日の時間の使い方を意識させたり、時間を管理・記録することができるアプリを開発したいと考えました。
 
 ## :computer: デモ
+(https://user-images.githubusercontent.com/58421780/81024283-f2126680-8ead-11ea-8f64-801543ab9521.gif)
 
 ### :art: 使用技術
 - 「Ruby on Rails」でアプリ製作
