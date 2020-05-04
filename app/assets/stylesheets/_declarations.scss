@@ -2,9 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.check {
+  margin: 30px 50px;
+  text-align: center;
+  font-size: 25px;
+  
+  &__title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  &__item {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    &-1, &-2, &-3 {
+      width: 380px;
+      height: 200px;
+      background-color: $main-black;
+      color: white;
+      border-radius: 10px;
+
+      &__sentence {
+        padding: 1px;
+        font-size: 20px;
+        text-align: left;
+      }
+    }
+  }
+}
+
 .howToUse {
   margin: 30px 50px;
-  height: 700px;
+  height: 600px;
   background-image: url("/images/timephoto5.jpeg");
   background-size: cover;
   color: white;
@@ -12,11 +44,6 @@
   font-size: 25px;
   border: solid 2px $main-black;
   border-radius: 10px;
-
-  &__title {
-    font-size: 30px;
-    font-weight: bold;
-  }
 
   &__sentence span {
     color: $main-blue;
